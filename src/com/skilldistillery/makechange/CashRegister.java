@@ -5,31 +5,108 @@ import java.util.Scanner;
 public class CashRegister {
 
 	public static void main(String[] args) {
-		
-		
-//		//User Story #1
-//		The user is prompted asking for the price of the item.
+
 		Scanner kb = new Scanner(System.in);
+
 		System.out.println("Welcome to Java-Mart please enter the price of the item: ");
 		double itemPrice = kb.nextDouble();
-//		kb.next();
-//		User Story #2
-//		The user is then prompted asking how much money was tendered by the customer.
+
 		System.out.println("Please enter how much money you received: ");
 		double moneyReceived = kb.nextDouble();
-		
-//		User Story #3
-//		Display an appropriate message if the customer provided too little money or the exact amount.
-		if(moneyReceived < itemPrice) {
-			System.out.println("That is not enough, don't play games with me!");
-		} else if (moneyReceived == itemPrice) {
-			System.out.println("Thanks for making my job easier and giving me exact change!");
+
+		int change = (int) ((moneyReceived - itemPrice) * 100);
+
+		if (itemPrice > moneyReceived) {
+
+			System.out.println("Bad user give me more money!");
+
 		}
-		
-//		User Story #4
-//		If the amount tendered is more than the cost of the item, display the number of bills and 
-		// coins that should be given to the customer.
-		
+
+		if (itemPrice == moneyReceived) {
+
+			System.out.println("Good User! You gave me exact change!");
+
+		}
+//		do {
+
+// item $5
+// $19 given = $14 - $10 = $4 
+		// 4 / 1 = 4
+
+		while (change >= 0) {
+
+			int numOfBills;
+
+			if (change / 1000 >= 1) {
+
+				numOfBills = (int) change / 1000;
+				change %= 1000;
+				System.out.println("Here is " + numOfBills + " ten dollar bill(s)");
+				continue;
+
+			} else if (change / 500 >= 1) {
+
+				numOfBills = (int) change / 500;
+				change %= 500;
+				System.out.println("Here is " + numOfBills + " five dollar bill(s)");
+
+				continue;
+
+			} else if (change / 100 >= 1) {
+
+				numOfBills = (int) change / 100;
+				change %= 100;
+
+				System.out.println("Here is " + numOfBills + " one dollar bill(s)");
+				continue;
+
+			} else if (change / 25 >= 1) {
+
+				numOfBills = (int) (change / 25);
+				change %= 25;
+
+				System.out.println("Here is " + numOfBills + " quarter(s)");
+				continue;
+				
+			} else if (change / 10 >= 1) {
+
+				numOfBills = (int) (change / 10);
+				change %= 10;
+
+				System.out.println("Here is " + numOfBills + " dime(s)");
+				continue;
+				
+			} else if (change / 5 >= 1) {
+
+				numOfBills = (int) (change / 5);
+				change %= 5;
+
+				System.out.println("Here is " + numOfBills + "nickel(s)");
+				continue;
+				
+			} else if (change / 1 >= 1) {
+
+				numOfBills = (int) (change / 1);
+				change %= 1;
+
+				System.out.println("Here is " + numOfBills + " pennie(s)");
+				break;
+			}
+
+		}
+
 	}
-	
+
+//		while (change % 5 > 0) {
+//
+//			if (change < 5) {
+//
+//				continue;
+//				
+//			}
+//
+//			System.out.println("Here is a 5 dollar bill");
+//			break;
+// 0.25 .10 .05 .01
+//	0.83- 0.75 = 0.08 -0.05 = 0.03
 }
