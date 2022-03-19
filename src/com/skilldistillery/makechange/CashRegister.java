@@ -27,11 +27,6 @@ public class CashRegister {
 			System.out.println("Good User! You gave me exact change!");
 
 		}
-//		do {
-
-// item $5
-// $19 given = $14 - $10 = $4 
-		// 4 / 1 = 4
 
 		while (change >= 0) {
 
@@ -67,7 +62,7 @@ public class CashRegister {
 
 				System.out.println("Here is " + numOfBills + " quarter(s)");
 				continue;
-				
+
 			} else if (change / 10 >= 1) {
 
 				numOfBills = (int) (change / 10);
@@ -75,7 +70,7 @@ public class CashRegister {
 
 				System.out.println("Here is " + numOfBills + " dime(s)");
 				continue;
-				
+
 			} else if (change / 5 >= 1) {
 
 				numOfBills = (int) (change / 5);
@@ -83,7 +78,7 @@ public class CashRegister {
 
 				System.out.println("Here is " + numOfBills + "nickel(s)");
 				continue;
-				
+
 			} else if (change / 1 >= 1) {
 
 				numOfBills = (int) (change / 1);
@@ -97,16 +92,4 @@ public class CashRegister {
 
 	}
 
-//		while (change % 5 > 0) {
-//
-//			if (change < 5) {
-//
-//				continue;
-//				
-//			}
-//
-//			System.out.println("Here is a 5 dollar bill");
-//			break;
-// 0.25 .10 .05 .01
-//	0.83- 0.75 = 0.08 -0.05 = 0.03
 }
