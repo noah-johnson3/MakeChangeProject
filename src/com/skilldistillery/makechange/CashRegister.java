@@ -76,20 +76,16 @@ public class CashRegister {
 				numOfBills = (int) (change / 5);
 				change %= 5;
 
-				System.out.println("Here is " + numOfBills + "nickel(s)");
+				System.out.println("Here is " + numOfBills + " nickel(s)");
 				continue;
 
 			} else if (change / 1 >= 1) {
-
 				numOfBills = (int) (change / 1);
 				change %= 1;
-
 				System.out.println("Here is " + numOfBills + " pennie(s)");
 				break;
+
 			}
-
 		}
-
 	}
-
 }
